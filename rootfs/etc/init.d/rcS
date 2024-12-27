@@ -1,0 +1,9 @@
+#!/bin/sh
+
+mountpoint -q /dev || mount -t devtmpfs devtmpfs /dev -o nosuid
+mount -t proc proc /proc -o nosuid,nodev,noexec
+mount -t sysfs sysfs /sys -o nosuid,nodev,noexec
+mount -t tmpfs tmpfs /run -o nosuid,nodev,noexec
+mount -t tmpfs tmpfs /tmp # -o nodev,noexec
+
+echo "rcS Complete"

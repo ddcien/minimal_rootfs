@@ -1,0 +1,12 @@
+#/etc/inittab
+
+::sysinit:/etc/init.d/rcS
+::restart:/sbin/init
+::shutdown:/sbin/swapoff -a
+::shutdown:/bin/umount -a -r
+
+# ::ctrlaltdel:/sbin/reboot
+# ::askfirst:-/bin/sh
+
+# tty0::respawn:-/bin/ash
+ttyPS0::respawn:-/bin/ash
